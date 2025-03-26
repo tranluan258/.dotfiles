@@ -32,7 +32,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.linting.eslint" },
     { import = "lazyvim.plugins.extras.formatting.prettier" },
     { import = "lazyvim.plugins.extras.test.core" },
-    { import = "lazyvim.plugins.extras.lang.java" },
 
     { import = "lazyvim.plugins.extras.ui.treesitter-context" },
 
@@ -42,9 +41,6 @@ require("lazy").setup({
   checker = {
     enabled = true,
     notify = false,
-  },
-  install = {
-    colorscheme = { "tokyonight", "catppuccino", "dracula", "gruvbox" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.

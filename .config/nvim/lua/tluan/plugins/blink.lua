@@ -10,6 +10,13 @@ return {
     },
     keymap = {
       preset = "default",
+      ["<Up>"] = { "select_prev", "fallback" },
+      ["<Down>"] = { "select_next", "fallback" },
+      ["<C-space>"] = {
+        function(cmp)
+          cmp.show({ providers = { "lsp", "buffer", "snippets", "path" } })
+        end,
+      },
       ["<Enter>"] = {
         function(cmp)
           if cmp.snippet_active() then
@@ -48,33 +55,11 @@ return {
         end,
 
         draw = {
-          align_to_component = "label", -- or 'none' to disable
           padding = 1,
           gap = 1,
           treesitter = {},
           columns = { { "kind_icon" }, { "label", "label_description", gap = 1 } },
           components = {
-            kind_icon = {
-              ellipsis = false,
-              text = function(ctx)
-                return ctx.kind_icon .. ctx.icon_gap
-              end,
-              highlight = function(ctx)
-                return require("blink.cmp.completion.windows.render.tailwind").get_hl(ctx) or "BlinkCmpKind" .. ctx.kind
-              end,
-            },
-
-            kind = {
-              ellipsis = false,
-              width = { fill = true },
-              text = function(ctx)
-                return ctx.kind
-              end,
-              highlight = function(ctx)
-                return require("blink.cmp.completion.windows.render.tailwind").get_hl(ctx) or "BlinkCmpKind" .. ctx.kind
-              end,
-            },
-
             label = {
               width = { fill = true, max = 60 },
               text = function(ctx)
@@ -143,18 +128,5 @@ return {
         enabled = false,
       },
     },
-    -- keymap = {
-    --
-    --   show = "<C-space>",
-    --   hide = "<C-e>",
-    --   accept = "<Enter>",
-    --   select_prev = { "<Up>", "<C-p>" },
-    --   select_next = { "<Down>", "<C-n>" },
-    --
-    --   show_documentation = {},
-    --   hide_documentation = {},
-    --   scroll_documentation_up = "<C-b>",
-    --   scroll_documentation_down = "<C-f>",
-    -- },
   },
 }

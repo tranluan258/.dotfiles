@@ -25,6 +25,7 @@ return {
         "gitignore",
         "query",
         "templ",
+        "java",
       },
 
       autotag = {
