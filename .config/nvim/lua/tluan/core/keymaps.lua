@@ -58,6 +58,8 @@ keymap.set("n", "<C-j>", "<C-w-j>", { desc = "Navigate down" })
 keymap.set("n", "<C-k>", "<C-w-k>", { desc = "Navigate up", silent = true })
 keymap.set("n", "<C-l>", "<C-w-l>", { desc = "Navigate right", silent = true })
 
+-- setting keymap for save without format
+keymap.set("n", "<leader>uf", ":w!<CR>", { desc = "Save file" }) -- save file
 -- lazygit
 -- keymap.set("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "Open lazygit" })
 
