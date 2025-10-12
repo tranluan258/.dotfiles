@@ -64,4 +64,3 @@ keymap.set("n", "<leader>uf", ":w!<CR>", { desc = "Save file" }) -- save file
 -- keymap.set("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "Open lazygit" })
 
 --undo tree
-keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)

@@ -7,7 +7,7 @@ return {
     },
     setup = {
       jdtls = function()
-        return true -- avoid duplicate servers
+        return true
       end,
     },
   },
