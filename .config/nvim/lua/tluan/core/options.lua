@@ -56,7 +56,7 @@ opt.swapfile = false
 -- config background color dynamically
 local function setBgColor()
   local time = os.date("*t")
-  if time.hour >= 6 and time.hour < 19 then
+  if time.hour >= 6 and time.hour < 18 then
     opt.background = "light"
     vim.g.background = "light"
     vim.cmd.colorscheme("catppuccin")
