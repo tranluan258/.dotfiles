@@ -74,5 +74,8 @@
         "missing-fields",
         "unused-local",
         "unused-function"
+    ],
+    "diagnostics.globals": [
+        "extend_or_override"
     ]
 }

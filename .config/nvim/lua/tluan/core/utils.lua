@@ -1,3 +1,10 @@
+require("conform").setup({
+  formatters_by_ft = {
+    java = { "google-java-format" },
+  },
+  -- format_on_save = { timeout_ms = 500, lsp_fallback = true },
+})
+
 local M = {}
 
 --- Get highlight properties for a given highlight name
