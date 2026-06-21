@@ -5,10 +5,10 @@
 
 ## Contents
 
-- vim (Neovim) config
-- tmux config
+- [vim (Neovim) config](./.config/nvim)
+- [tmux config](./.tmux.conf)
 - git config
-- zsh config
+- [zsh config](./.zshrc)
 
 ## Neovim setup
 

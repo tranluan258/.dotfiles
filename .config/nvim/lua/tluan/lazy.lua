@@ -1,5 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
   vim.fn.system({
     "git",
     "clone",
@@ -17,7 +17,7 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
       opts = {
-        colorscheme = "catppuccin",
+        colorscheme = "solarized-osaka",
         news = {
           lazyvim = true,
           neovim = true,
@@ -28,7 +28,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.tailwind" },
     { import = "lazyvim.plugins.extras.lang.go" },
-    { import = "lazyvim.plugins.extras.ui.mini-animate" },
     { import = "lazyvim.plugins.extras.test.core" },
     { import = "lazyvim.plugins.extras.ui.treesitter-context" },
 
@@ -36,7 +35,8 @@ require("lazy").setup({
   },
 }, {
   checker = {
-    enabled = true,
+    -- don't spawn background git update-checks; run :Lazy check manually
+    enabled = false,
     notify = false,
   },
   defaults = {

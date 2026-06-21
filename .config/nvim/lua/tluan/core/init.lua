@@ -1,3 +1,3 @@
 require("tluan.core.keymaps")
 require("tluan.core.options")
-require("tluan.core.utils")
+-- tluan.core.utils is a require-on-demand library; not loaded at startup.

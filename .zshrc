@@ -110,6 +110,12 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
+# open buffer line in editor
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
 alias cz='nvim ~/.zshrc'
 alias ct='nvim ~/.tmux.conf'
 alias cv='cd ~/.config/nvim && nvim'
@@ -130,8 +136,6 @@ alias tm='tmux attach -t $(basename "$PWD") || tmux new -s  $(basename "$PWD")'
 alias ta='tmux attach || tmux'
 alias tmw="~/.local/bin/tmux-sessionizer.sh $PWD"
 
-alias pfetch="~/pfetch/pfetch"
-
 
 alias la='ls -a'
 alias l='eza -l --icons --git -a'
@@ -146,6 +150,7 @@ alias swag='$(go env GOPATH)/bin/swag'
 alias air='$(go env GOPATH)/bin/air'
 alias lg='lazygit'
 alias reload='source ~/.zshrc'
+alias cc='sof-claude'
 
 
 export PF_INFO="ascii title os editor"
@@ -185,3 +190,14 @@ if type brew &>/dev/null; then
     autoload -Uz compinit
     compinit
 fi
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export PATH="$HOME/.local/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/luantran/.antigravity/antigravity/bin:$PATH"
